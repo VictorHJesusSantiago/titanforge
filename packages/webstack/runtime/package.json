@@ -1,0 +1,10 @@
+{
+  "name": "@titanforge/runtime",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "The webstack server runtime: an async-function component model, a hyperscript tree builder, and a streaming SSR renderer with out-of-order suspense-boundary flushing over Node Readable streams. Wires route loaders (from @titanforge/compiler's manifest) to components before render.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"]
+}
