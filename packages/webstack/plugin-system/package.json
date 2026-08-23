@@ -1,0 +1,13 @@
+{
+  "name": "@titanforge/plugin-system",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A small, real plugin API for the webstack pipeline: lifecycle hooks over route discovery, component transforms, and build completion, plus a PluginRunner that applies registered plugins in order.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/compiler": "0.1.0"
+  }
+}
