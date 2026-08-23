@@ -1,0 +1,10 @@
+{
+  "name": "@titanforge/storage-api",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "The storage interface the executor depends on and every storage engine (in-memory, LSM) implements — including the shared MVCC snapshot-visibility contract. No dependencies, no implementation.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"]
+}
