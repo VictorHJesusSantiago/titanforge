@@ -1,0 +1,13 @@
+{
+  "name": "@titanforge/catalog",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "The schema catalog and the binder: resolves every table/column reference in a parsed statement, infers expression types, and validates the semantic rules a parser cannot check.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/parser": "0.1.0"
+  }
+}
