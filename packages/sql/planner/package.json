@@ -1,0 +1,13 @@
+{
+  "name": "@titanforge/planner",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Bound statement to logical plan, a rule-based optimizer (predicate pushdown, projection pushdown, hash-vs-nested-loop join selection), and the physical plan the executor runs.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/catalog": "0.1.0"
+  }
+}
