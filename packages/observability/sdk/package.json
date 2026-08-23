@@ -1,0 +1,13 @@
+{
+  "name": "@titanforge/sdk",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Auto-instrumentation SDK for Node/browser JS apps: wraps global fetch to emit HTTP spans, exposes a manual startSpan/end API, and batches spans as real OTLP JSON POSTed to a collector.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/otlp": "0.1.0"
+  }
+}
