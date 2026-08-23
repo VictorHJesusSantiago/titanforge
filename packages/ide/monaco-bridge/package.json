@@ -1,0 +1,15 @@
+{
+  "name": "@titanforge/monaco-bridge",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Thin adapter wiring @titanforge/language-service into Monaco's provider APIs (completions/hover/diagnostics/definition) plus VFS<->Monaco-model content sync. Necessarily DOM/worker-coupled (Monaco requires a real browser environment) — kept deliberately thin, with the pure sync logic extracted and unit-tested separately from the Monaco-specific glue, matching this project's 'pure logic tested, DOM glue thin and less tested' convention.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/vfs": "0.1.0",
+    "@titanforge/language-service": "0.1.0",
+    "monaco-editor": "^0.52.0"
+  }
+}
