@@ -1,0 +1,32 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/sql/parser" },
+    { "path": "packages/sql/catalog" },
+    { "path": "packages/sql/storage-api" },
+    { "path": "packages/sql/storage-memory" },
+    { "path": "packages/sql/planner" },
+    { "path": "packages/ide/vfs" },
+    { "path": "packages/ide/language-service" },
+    { "path": "packages/ide/monaco-bridge" },
+    { "path": "packages/ide/shell" },
+    { "path": "packages/ide/dap" },
+    { "path": "packages/ide/app" },
+    { "path": "packages/observability/otlp" },
+    { "path": "packages/observability/columnar-store" },
+    { "path": "packages/observability/query-lang" },
+    { "path": "packages/observability/analysis" },
+    { "path": "packages/sql/storage-lsm" },
+    { "path": "packages/observability/sdk" },
+    { "path": "packages/observability/server" },
+    { "path": "packages/sql/executor" },
+    { "path": "packages/sql/engine" },
+    { "path": "packages/sql/cli" },
+    { "path": "packages/observability/ui" },
+    { "path": "packages/webstack/compiler" },
+    { "path": "packages/webstack/runtime" },
+    { "path": "packages/webstack/dev-server" },
+    { "path": "packages/webstack/plugin-system" },
+    { "path": "packages/webstack/webstack-cli" }
+  ]
+}
