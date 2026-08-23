@@ -1,0 +1,13 @@
+{
+  "name": "@titanforge/compiler",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "The webstack front end: file-based route discovery, nested-layout resolution, and type-safe data-loader extraction, all built on real AST analysis (ts-morph) rather than string templating. Generates a typed TypeScript router file from a route manifest.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "ts-morph": "^24.0.0"
+  }
+}
