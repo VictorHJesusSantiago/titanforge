@@ -1,0 +1,17 @@
+{
+  "name": "@titanforge/webstack-cli",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Thin CLI (`dev`/`build`) wiring the compiler, runtime, dev-server, and plugin-system packages together against the example app in packages/webstack/example.",
+  "license": "MIT",
+  "bin": { "titanforge": "./src/cli.ts" },
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/compiler": "0.1.0",
+    "@titanforge/runtime": "0.1.0",
+    "@titanforge/dev-server": "0.1.0",
+    "@titanforge/plugin-system": "0.1.0"
+  }
+}
