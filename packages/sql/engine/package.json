@@ -1,0 +1,17 @@
+{
+  "name": "@titanforge/engine",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "The Database facade: ties the parser, catalog/binder, planner, executor, and a StorageEngine together behind execute()/executeScript()/transaction().",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/parser": "0.1.0",
+    "@titanforge/catalog": "0.1.0",
+    "@titanforge/planner": "0.1.0",
+    "@titanforge/executor": "0.1.0",
+    "@titanforge/storage-api": "0.1.0"
+  }
+}
