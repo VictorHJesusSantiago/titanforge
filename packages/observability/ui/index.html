@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Titanforge Observability</title>
+    <style>
+      body { font-family: system-ui, sans-serif; background: #0b0d10; color: #e6e9ee; margin: 0; padding: 16px; }
+      h1 { font-size: 16px; font-weight: 600; }
+      section { margin-bottom: 24px; }
+      canvas { background: #14181d; border: 1px solid #262c34; border-radius: 4px; }
+      #search-input { width: 480px; padding: 6px 8px; background: #14181d; color: #e6e9ee; border: 1px solid #262c34; border-radius: 4px; }
+      #search-status { color: #c0392b; font-size: 12px; margin-top: 4px; }
+      pre { background: #14181d; border: 1px solid #262c34; border-radius: 4px; padding: 8px; max-height: 240px; overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <h1>Titanforge Observability</h1>
+
+    <section>
+      <h2>Search</h2>
+      <input id="search-input" type="text" placeholder='service = "api" AND duration > 100' />
+      <div id="search-status"></div>
+      <pre id="search-results"></pre>
+    </section>
+
+    <section>
+      <h2>Flamegraph</h2>
+      <canvas id="flamegraph-canvas" width="960" height="320"></canvas>
+      <pre id="span-attributes"></pre>
+    </section>
+
+    <section>
+      <h2>Service Map</h2>
+      <canvas id="service-map-canvas" width="640" height="480"></canvas>
+    </section>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

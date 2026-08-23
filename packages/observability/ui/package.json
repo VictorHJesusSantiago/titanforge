@@ -1,0 +1,21 @@
+{
+  "name": "@titanforge/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser UI: a from-scratch Canvas 2D flamegraph and service map (no charting library), plus a search box driving @titanforge/query-lang against @titanforge/server's /api/query. Pure layout math lives in flamegraph-layout.ts/service-map-layout.ts (unit tested); canvas drawing is thin, untested glue — same split as the rest of this repo's pure-vs-glue convention.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@titanforge/query-lang": "0.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.7"
+  }
+}
