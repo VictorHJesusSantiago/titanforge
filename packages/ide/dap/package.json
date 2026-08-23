@@ -1,0 +1,10 @@
+{
+  "name": "@titanforge/dap",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A real Debug Adapter Protocol (DAP) wire-protocol layer wired to a from-scratch, steppable, breakpoint-capable tree-walking interpreter for a tiny toy scripting language. Proves the DAP request/response/event plumbing end-to-end against a genuine execution engine; does NOT integrate with the V8/Node Inspector Protocol (out of scope).",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"]
+}
