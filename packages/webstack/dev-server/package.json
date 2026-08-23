@@ -1,0 +1,17 @@
+{
+  "name": "@titanforge/dev-server",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Dev server with HMR: esbuild-powered on-the-fly transform of route/component files, an fs.watch file watcher, and a WebSocket channel that pushes update messages to a minimal client-side HMR runtime. Scope: re-renders the affected route on change; component-local state is not preserved across a swap (no fiber-level patching like React Fast Refresh).",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "esbuild": "^0.25.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.13"
+  }
+}
