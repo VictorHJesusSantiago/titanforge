@@ -1,0 +1,16 @@
+{
+  "name": "@titanforge/server",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "HTTP server tying the observability stack together: OTLP ingestion, per-trace flamegraph data, query-lang search, service map, and anomaly endpoints. Built on Node's built-in http module rather than Express — see server.ts for why.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/otlp": "0.1.0",
+    "@titanforge/columnar-store": "0.1.0",
+    "@titanforge/query-lang": "0.1.0",
+    "@titanforge/analysis": "0.1.0"
+  }
+}
