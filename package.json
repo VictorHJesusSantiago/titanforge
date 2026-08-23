@@ -1,0 +1,34 @@
+{
+  "name": "titanforge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Four systems built from scratch in TypeScript: an embedded SQL database engine (tokenizer through LSM storage), an observability platform (OTLP traces/metrics/logs), a full-stack framework with its own compiler, and a browser-based IDE with a real in-browser language server.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/sql/*",
+    "packages/observability/*",
+    "packages/webstack/*",
+    "packages/ide/*"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "typecheck": "tsc -b tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "check": "npm run lint && npm run build && npm run test"
+  },
+  "devDependencies": {
+    "eslint": "^9.17.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.19.0",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8",
+    "@types/node": "^22.10.2"
+  }
+}
