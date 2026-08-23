@@ -1,0 +1,14 @@
+{
+  "name": "@titanforge/language-service",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Real, working code intelligence backed by TypeScript's own compiler-provided ts.LanguageService (the same engine behind VS Code / the TS Playground), driven by a ts.LanguageServiceHost that reads and version-tracks files through @titanforge/vfs. Honest scope note: this is TypeScript's real language service, not a from-scratch LSP, and not WASM-cross-compiled — see README/index.ts comments for why that substitution was made for the 'compiled to WASM' part of the brief.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/vfs": "0.1.0",
+    "typescript": "^5.7.2"
+  }
+}
