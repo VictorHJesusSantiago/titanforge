@@ -1,0 +1,13 @@
+{
+  "name": "@titanforge/columnar-store",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A columnar in-memory store for spans: one typed array per field, index-aligned across arrays, plus a trace-id secondary index. Optimized for scan-one-column aggregations, not row access.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/otlp": "0.1.0"
+  }
+}
