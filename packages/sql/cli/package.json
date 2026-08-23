@@ -1,0 +1,16 @@
+{
+  "name": "@titanforge/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A small REPL over @titanforge/engine's Database: reads `;`-terminated SQL statements from stdin (or a -f script file) and prints results as an ASCII table.",
+  "license": "MIT",
+  "bin": { "titanforge-sql": "./src/main.ts" },
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/engine": "0.1.0",
+    "@titanforge/storage-memory": "0.1.0",
+    "@titanforge/storage-api": "0.1.0"
+  }
+}
