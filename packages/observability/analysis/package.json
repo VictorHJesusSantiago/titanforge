@@ -1,0 +1,13 @@
+{
+  "name": "@titanforge/analysis",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Pure functions over Span[]: deriving a service call graph from parent-child span relationships, and rolling mean/stddev-based anomaly detection over span durations.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/otlp": "0.1.0"
+  }
+}
