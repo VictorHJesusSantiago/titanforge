@@ -1,0 +1,10 @@
+{
+  "name": "@titanforge/vfs",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "An in-memory, path-based virtual filesystem: real directory/file tree nodes (not a flat path map), CRUD, recursive watch events, and JSON snapshot/restore for session persistence. The foundation every other package in packages/ide/* builds on.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"]
+}
