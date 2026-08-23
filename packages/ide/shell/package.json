@@ -1,0 +1,14 @@
+{
+  "name": "@titanforge/shell",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "An honest, scoped terminal command interpreter over @titanforge/vfs: a real tokenizer/parser (quoting, pipes) and a fixed set of commands (ls/cd/pwd/cat/echo/mkdir/rm/touch/mv/cp/run) that actually read and mutate the virtual filesystem. Not a Linux container, no real processes or npm install — see src/shell.ts for the documented scope.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/vfs": "0.1.0",
+    "typescript": "^5.7.2"
+  }
+}
