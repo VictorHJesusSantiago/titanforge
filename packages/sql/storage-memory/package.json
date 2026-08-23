@@ -1,0 +1,13 @@
+{
+  "name": "@titanforge/storage-memory",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A pure in-memory StorageEngine implementing @titanforge/storage-api's MVCC contract — used by the executor's own tests and anywhere durability doesn't matter.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/storage-api": "0.1.0"
+  }
+}
