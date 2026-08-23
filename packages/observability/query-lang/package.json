@@ -1,0 +1,13 @@
+{
+  "name": "@titanforge/query-lang",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A small hand-written query language for filtering spans (service = \"api\" AND duration > 100), matching @titanforge/parser's tokenizer/recursive-descent house style. No dependencies.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "dependencies": {
+    "@titanforge/otlp": "0.1.0"
+  }
+}
