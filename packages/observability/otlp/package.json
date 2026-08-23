@@ -1,0 +1,10 @@
+{
+  "name": "@titanforge/otlp",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "OTLP (OpenTelemetry Protocol) JSON encoding/decoding for traces, and the flat internal Span type every other observability package builds on. Protobuf encoding is out of scope (see parse-json.ts). No dependencies.",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"]
+}
