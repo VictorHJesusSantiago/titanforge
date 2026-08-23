@@ -1,0 +1,23 @@
+{
+  "name": "@titanforge/app",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "The actual IDE page: a Vite browser app wiring together the virtual filesystem, TypeScript language service, Monaco bridge, shell, and DAP toy-language debugger into a working file tree + editor + terminal + debug panel. Terminal UI is a small hand-built scrollback+input element rather than xterm.js, to keep this package's only new runtime dependency to monaco-editor itself (see src/terminalPane.ts for the reasoning).",
+  "license": "MIT",
+  "exports": { ".": "./src/index.ts" },
+  "types": "./src/index.ts",
+  "files": ["src", "dist"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@titanforge/vfs": "0.1.0",
+    "@titanforge/language-service": "0.1.0",
+    "@titanforge/monaco-bridge": "0.1.0",
+    "@titanforge/shell": "0.1.0",
+    "@titanforge/dap": "0.1.0",
+    "monaco-editor": "^0.52.0"
+  }
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Titanforge IDE</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #1e1e1e;
+        --bg-alt: #252526;
+        --border: #3c3c3c;
+        --text: #d4d4d4;
+        --text-dim: #8a8a8a;
+        --accent: #569cd6;
+        --breakpoint: #e05561;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        font-family: -apple-system, 'Segoe UI', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+      }
+      #app {
+        display: grid;
+        grid-template-columns: 220px 1fr 320px;
+        grid-template-rows: 1fr 220px;
+        grid-template-areas:
+          "sidebar editor debug"
+          "sidebar terminal debug";
+        height: 100vh;
+        width: 100vw;
+      }
+      #sidebar { grid-area: sidebar; background: var(--bg-alt); border-right: 1px solid var(--border); overflow: auto; }
+      #editor-pane { grid-area: editor; min-width: 0; min-height: 0; }
+      #terminal-pane { grid-area: terminal; border-top: 1px solid var(--border); min-height: 0; }
+      #debug-pane { grid-area: debug; background: var(--bg-alt); border-left: 1px solid var(--border); overflow: auto; }
+
+      .panel-title {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-dim);
+        padding: 8px 10px 4px;
+      }
+      #file-tree { font-size: 13px; padding-bottom: 8px; }
+      .tree-row { padding: 2px 8px; white-space: nowrap; cursor: pointer; user-select: none; }
+      .tree-row:hover { background: #2a2d2e; }
+      .tree-row.dir { color: var(--accent); }
+      .tree-row.active { background: #37373d; }
+
+      #terminal-pane {
+        display: flex;
+        flex-direction: column;
+        background: #0c0c0c;
+        font-family: 'Cascadia Mono', Consolas, monospace;
+        font-size: 13px;
+      }
+      #terminal-output { flex: 1; overflow-y: auto; padding: 6px 10px; white-space: pre-wrap; }
+      #terminal-input-row { display: flex; padding: 2px 10px 6px; }
+      #terminal-prompt { color: var(--accent); margin-right: 6px; }
+      #terminal-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        color: var(--text);
+        font: inherit;
+        outline: none;
+      }
+      .term-stderr { color: #f48771; }
+
+      #debug-pane { padding: 8px; font-size: 12px; }
+      #debug-controls button {
+        background: #333; color: var(--text); border: 1px solid var(--border);
+        padding: 4px 8px; margin: 0 4px 8px 0; cursor: pointer; border-radius: 3px;
+      }
+      #debug-controls button:hover { background: #3e3e3e; }
+      #debug-stack, #debug-variables { font-family: Consolas, monospace; font-size: 12px; }
+      .var-row { display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid #2a2a2a; }
+      .var-name { color: #9cdcfe; }
+      .var-value { color: #ce9178; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="sidebar">
+        <div class="panel-title">Explorer</div>
+        <div id="file-tree"></div>
+      </div>
+      <div id="editor-pane"></div>
+      <div id="terminal-pane">
+        <div id="terminal-output"></div>
+        <div id="terminal-input-row">
+          <span id="terminal-prompt">$</span>
+          <input id="terminal-input" autocomplete="off" spellcheck="false" />
+        </div>
+      </div>
+      <div id="debug-pane">
+        <div class="panel-title">Debug: toy.tf</div>
+        <div id="debug-controls">
+          <button id="debug-run">Run</button>
+          <button id="debug-continue">Continue</button>
+          <button id="debug-step-over">Step Over</button>
+          <button id="debug-step-in">Step In</button>
+        </div>
+        <div class="panel-title">Call Stack</div>
+        <div id="debug-stack"></div>
+        <div class="panel-title">Variables</div>
+        <div id="debug-variables"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
