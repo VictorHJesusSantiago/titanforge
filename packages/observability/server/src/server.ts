@@ -18,10 +18,36 @@ import { serializeSpan } from './serialize.js';
  * than a framework dependency would have anyway.
  */
 
+function securityHeaders(): Record<string, string> {
+  return {
+    'Cache-Control': 'no-store',
+    'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'",
+    'Referrer-Policy': 'no-referrer',
+    'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'Permissions-Policy': 'camera=(), geolocation=(), microphone=()',
+  };
+}
+
 function sendJson(res: ServerResponse, status: number, body: unknown): void {
   const payload = JSON.stringify(body);
-  res.writeHead(status, { 'Content-Type': 'application/json' });
+  res.writeHead(status, { ...securityHeaders(), 'Content-Type': 'application/json' });
   res.end(payload);
+}
+
+function isAllowedOrigin(req: IncomingMessage): boolean {
+  const origin = req.headers.origin;
+  if (!origin) return true;
+
+  const configured = (process.env.TITANFORGE_ALLOWED_ORIGINS ?? '')
+    .split(',')
+    .map((value) => value.trim())
+    .filter(Boolean);
+  if (configured.includes(origin)) return true;
+
+  const host = req.headers.host;
+  return host !== undefined && (origin === `http://${host}` || origin === `https://${host}`);
 }
 
 function readBody(req: IncomingMessage): Promise<string> {
@@ -44,6 +70,11 @@ export function createApp(store: ColumnarSpanStore = new ColumnarSpanStore()): S
 async function handleRequest(store: ColumnarSpanStore, req: IncomingMessage, res: ServerResponse): Promise<void> {
   const url = new URL(req.url ?? '/', 'http://localhost');
   const method = req.method ?? 'GET';
+
+  if (method !== 'GET' && method !== 'HEAD' && !isAllowedOrigin(req)) {
+    sendJson(res, 403, { error: 'request origin is not allowed' });
+    return;
+  }
 
   if (method === 'POST' && url.pathname === '/v1/traces') {
     return handleIngestTraces(store, req, res);

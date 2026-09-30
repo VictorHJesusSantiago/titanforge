@@ -111,6 +111,25 @@ describe('@titanforge/server integration', () => {
     expect(body).toEqual({ accepted: 4 });
   });
 
+  it('emits defensive response headers', async () => {
+    const res = await fetch(`${baseUrl}/api/service-map`);
+    expect(res.headers.get('cache-control')).toBe('no-store');
+    expect(res.headers.get('content-security-policy')).toContain("default-src 'none'");
+    expect(res.headers.get('referrer-policy')).toBe('no-referrer');
+    expect(res.headers.get('strict-transport-security')).toContain('max-age=31536000');
+    expect(res.headers.get('x-content-type-options')).toBe('nosniff');
+    expect(res.headers.get('x-frame-options')).toBe('DENY');
+  });
+
+  it('rejects cross-origin state-changing requests', async () => {
+    const res = await fetch(`${baseUrl}/v1/traces`, {
+      method: 'POST',
+      headers: { Origin: 'https://attacker.example', 'Content-Type': 'application/json' },
+      body: JSON.stringify(tracePayload()),
+    });
+    expect(res.status).toBe(403);
+  });
+
   it('GET /api/traces/:traceId returns every span in the trace with flamegraph offsets/depths', async () => {
     const res = await fetch(`${baseUrl}/api/traces/trace-abc`);
     expect(res.status).toBe(200);
